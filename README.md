@@ -13,6 +13,7 @@ SCP: Secret Laboratory 服务器的无限体力插件，基于 Exiled 框架开�
 ## 安装
 1. 将 `DDSurrender.dll` 放入 `Exiled/Plugins` 目录
 2. 配置 `config.yml`：
+   请耐心阅读配置文件，本人的插件对于配置文件都进行了详细设计，几乎所有内容都能在配置里面改！！！
 
 ## 修改及编译
 用 Visual Studio 打开 .sln 文件编译
