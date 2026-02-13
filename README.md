@@ -1,7 +1,7 @@
 # DDSurrender
 ![Exiled](https://img.shields.io/badge/Exiled-9.12.6+-blue)
 
-SCP: Secret Laboratory 服务器的无限体力插件，基于 Exiled 框架开发。
+SCP: Secret Laboratory 服务器的 D级投降 插件，基于 Exiled 框架开发。
 
 ## 功能
 - 添加.tx投降功能（仅限D级人员，重复投降有彩蛋哦）
