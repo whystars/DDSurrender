@@ -1,7 +1,4 @@
-﻿// CustomFaction.cs
-using Exiled.API.Features;
-using System;
-
+// CustomFaction.cs
 namespace DDSurrender
 {
     public enum CustomFactionType
@@ -12,8 +9,6 @@ namespace DDSurrender
 
     public class CustomFaction
     {
-        public Player OriginalRole { get; set; }
-        public DateTime SurrenderTime { get; set; }
         public CustomFactionType CurrentFaction { get; set; }
     }
 }
