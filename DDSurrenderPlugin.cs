@@ -25,7 +25,7 @@ namespace DDSurrender
         public HashSet<string> _blacklist = new();
 
         private SurrenderCommand _surrenderCommand = null!;
-        private System.Action _onWaitingForPlayers = null!;
+        private Exiled.Events.Features.CustomEventHandler _onWaitingForPlayers = null!;
 
         private static readonly ConcurrentDictionary<string, CustomFaction> _factionStates = new();
 
@@ -50,7 +50,7 @@ namespace DDSurrender
                 RegisterCommandSafe();
                 Log.Debug($"[DEBUG] 命令注册完成于服务器准备阶段");
             };
-            Exiled.Events.Handlers.Server.WaitingForPlayers += _onWaitingForPlayers;
+            Exiled.Events.Handlers.Server.WaitingForPlayers.Subscribe(_onWaitingForPlayers);
 
             Exiled.Events.Handlers.Player.Escaping += OnPlayerEscape;
             Exiled.Events.Handlers.Player.Spawned += OnPlayerSpawned;
@@ -68,7 +68,7 @@ namespace DDSurrender
         {
             Instance = null!;
 
-            Exiled.Events.Handlers.Server.WaitingForPlayers -= _onWaitingForPlayers;
+            Exiled.Events.Handlers.Server.WaitingForPlayers.Unsubscribe(_onWaitingForPlayers);
             Exiled.Events.Handlers.Player.Spawned -= OnPlayerSpawned;
             Exiled.Events.Handlers.Player.Escaping -= OnPlayerEscape;
             Exiled.Events.Handlers.Player.Hurting -= OnPlayerHurt;
